@@ -7,10 +7,8 @@ import org.testng.annotations.Test;
 import tDBank.homepage.TDBankHomepage;
 
 public class CommercialPage extends TDBankHomepage {
-    WebDriver driver;
     String assetBasedLending = "//*[@id=\"drag-id-tabsCarousel0\"]/div/li[4]/div[1]/span/span";
 
-    @Test
     public void commercialAssetBasedLending() throws InterruptedException {
         commercialPageTab();
 

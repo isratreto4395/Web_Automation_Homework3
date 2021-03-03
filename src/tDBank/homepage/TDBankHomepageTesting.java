@@ -41,7 +41,7 @@ public class TDBankHomepageTesting extends TDBankHomepage {
     }
 
     @Test
-    public void investingAndWealthTabTest() {
+      public void investingAndWealthTabTest() {
         investingAndWealthTab();
         String expectedText = "Wealth & Investment Management And Financial Planning | TD Wealth";
         String actualText = driver.getTitle();

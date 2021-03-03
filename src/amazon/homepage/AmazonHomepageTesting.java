@@ -15,7 +15,7 @@ public class AmazonHomepageTesting extends AmazonHomepage {
     }
 
     @Test
-    public void AmazonSignIntest() throws IOException, InterruptedException {
+    public void AmazonSignIntest() throws IOException {
         amazonlogIn();
         String expectedText = "Israt's Amazon.com";
         String actualText = driver.findElement(By.id("nav-your-amazon-text")).getText();
@@ -31,7 +31,7 @@ public class AmazonHomepageTesting extends AmazonHomepage {
     }
 
     @Test
-    public void returnOrdersTest() throws IOException, InterruptedException {
+    public void returnOrdersTest() throws IOException{
         returnsAndOrders();
         String expectedText = "Your Orders";
         String actualText = driver.getTitle();
@@ -39,7 +39,7 @@ public class AmazonHomepageTesting extends AmazonHomepage {
     }
 
     @Test
-    public void primeVideoPageTest() throws IOException, InterruptedException {
+    public void primeVideoPageTest() throws IOException {
         primeVideoPage();
         String expectedText = "Amazon.com: Prime Video: Prime Video";
         String actualText = driver.getTitle();
@@ -47,7 +47,7 @@ public class AmazonHomepageTesting extends AmazonHomepage {
 
     }
     @Test
-    public void customerServicepageTest() throws IOException, InterruptedException {
+    public void customerServicepageTest() throws IOException {
         customerServicePage();
         String expectedText = "Amazon.com Help: Help & Customer Service";
         String actualText = driver.getTitle();
@@ -55,7 +55,7 @@ public class AmazonHomepageTesting extends AmazonHomepage {
     }
 
     @Test
-    public void primePageTest() throws IOException, InterruptedException {
+    public void primePageTest() throws IOException{
         primePage();
         String expectedText = "Amazon.com: Amazon Prime";
         String actualText = driver.getTitle();
@@ -63,7 +63,7 @@ public class AmazonHomepageTesting extends AmazonHomepage {
     }
 
     @Test
-    public void bestSellersPageTest() throws IOException, InterruptedException {
+    public void bestSellersPageTest() throws IOException {
         bestSellersPage();
         String expectedText = "Amazon.com Best Sellers: The most popular items on Amazon";
         String actualText = driver.getTitle();
@@ -72,7 +72,7 @@ public class AmazonHomepageTesting extends AmazonHomepage {
     }
 
     @Test
-    public void conditionsofUsePageTest() throws IOException, InterruptedException {
+    public void conditionsofUsePageTest() throws IOException {
         conditionsofUsePage();
         String expectedText = "Help & Customer Service";
         String actualText = driver.findElement(By.linkText(expectedText)).getText();
@@ -87,5 +87,31 @@ public class AmazonHomepageTesting extends AmazonHomepage {
         Assert.assertEquals(actualText,expectedText,"Text does not exit");
 
     }
+
+    @Test
+    public void interestBasedAdsTest() throws IOException {
+        interestBasedAds();
+        String expectedText = "Security and Privacy";
+        String actualText = driver.findElement(By.cssSelector("body > div.cs-help-v4 > div.cs-help-container > div.cs-help-sidebar > div.cs-help-sidebar-module.topic-sidebar > div:nth-child(2) > h3")).getText();
+        Assert.assertEquals(actualText,expectedText,"Text was not found");
+    }
+
+    @Test
+    public void careersPageTest() throws IOException {
+        careersPage();
+        String expectedText = "Find jobs";
+        String actualText = driver.findElement(By.cssSelector("#home-search > h1")).getText();
+        Assert.assertEquals(actualText,expectedText,"Text was not found");
+    }
+
+    @Test
+    public void testCheckSearchBox() throws IOException {
+        checkSearchBox();
+        String expectedText="LMVERNA";
+        String actualText=driver.findElement(By.linkText("LMVERNA")).getText();
+        Assert.assertEquals(actualText,expectedText,"Product does not match");
+    }
+
+
 
     }

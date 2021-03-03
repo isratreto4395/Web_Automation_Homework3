@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 public class SmallBusinessPageTest extends SmallBusinessPage {
     @Test
     public void smallBuisnessCheckingAccoutTest() throws InterruptedException {
-        smallBusinessTab();
-        String expectedText = "Small Business Banking by TD Bank";
+        smallBuisnessCheckingAccout();
+        String expectedText = "Open A Small Business Checking Account Online | TD Bank";
         String actualText = driver.getTitle();
         Assert.assertEquals(actualText,expectedText, "Text did not match");
 
