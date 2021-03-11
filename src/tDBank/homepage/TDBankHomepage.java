@@ -23,8 +23,7 @@ public class TDBankHomepage {
     String state = "New Jersey";
     String selectCityDropdown = "//*[@id=\"city\"]";
     String city = "Deptford";
-    //String setMyLocationButton = "//*[@id=\"scrollbarid_486\"]/div/div/div/div/p[3]/button";
-    String setMyLocationButtonSelector = "#drag-id-tabsCarousel0 > div > li:nth-child(2) > div.td-tabs-carousel-tab-content.icon-link > span";
+    String setMyLocationButtonSelector = "button[class='td-button td-button-block td-button-secondary']";
     String smallBusinesstabLocator = "body > div.td-header-nav-top-message > div.td_rq_header-nav.td-header-nav > header.td-header-desktop > div.td-utility-toggle > div > div.td-section-left > div > ul > li:nth-child(2)";
     String commercialTabLocator = "Commercial";
     String investingAndHealthLocator = "Investing & Wealth";
@@ -46,6 +45,7 @@ public class TDBankHomepage {
         driver.findElement(By.xpath(getofferButton)).click();
     }
 
+    @Test
     public void homeEquity() {
         jScript = (JavascriptExecutor) driver;
         jScript.executeScript("window.scrollBy(0,350)", "");
@@ -55,6 +55,7 @@ public class TDBankHomepage {
         dropDown = new Select(driver.findElement(By.xpath(selectCityDropdown)));
         dropDown.selectByVisibleText(city);
         driver.findElement(By.cssSelector(setMyLocationButtonSelector)).click();
+
 
     }
 

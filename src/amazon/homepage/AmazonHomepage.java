@@ -81,9 +81,13 @@ public class AmazonHomepage {
 
     }
 
+    @Test
     public void selectYourAddressZipCode(){
         driver.findElement(By.id(selectYourAddressLocator)).click();
-        driver.findElement(By.cssSelector(zipCodeBox)).sendKeys(zipCode);
+        //driver.findElement(By.cssSelector("*[class='GLUX_Full_Width a-declarative']")).click();
+        //driver.findElement(By.cssSelector("*[id='GLUXZipInputSection']")).click();
+       // driver.findElement(By.cssSelector("*[id='GLUXZipInputSection']")).sendKeys(zipCode);
+        driver.findElement(By.cssSelector("*[id='GLUXZipUpdateInput']")).sendKeys(zipCode);
         driver.findElement(By.xpath(applyButton)).click();
         driver.findElement(By.xpath(doneButton)).click();
     }
@@ -144,7 +148,7 @@ public class AmazonHomepage {
         driver.findElement(By.id(searchButtonLocator)).click();
     }
 
-    @AfterMethod
+    //@AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(10000);
         driver.quit();

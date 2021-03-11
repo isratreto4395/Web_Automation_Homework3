@@ -15,7 +15,7 @@ public class HomePageTest extends HomePage {
 
     @Test
     public void checkFromWhereTabTest() throws InterruptedException {
-        checkFromWhereTab();
+        //checkFromWhereTab();
         String expectedText = "Dhaka, Bangladesh";
         String actualText = driver.findElement(By.cssSelector("#from")).getText();
         Assert.assertEquals(actualText,expectedText,"Cannot input in the from box");
